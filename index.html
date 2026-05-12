@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>THE THREAD 2日間チャレンジ・参加者の部屋</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ GATE (password) ============ -->
+<div id="gate" class="gate" hidden>
+  <div class="gate-card">
+    <p class="gate-lead">THE&nbsp;THREAD</p>
+    <h1 class="gate-title">2日間チャレンジ<br>参加者の部屋</h1>
+    <p class="gate-sub">合言葉を入れて、扉を開けてください🌿</p>
+    <form id="gate-form" autocomplete="off">
+      <input id="gate-input" type="password" inputmode="text" placeholder="合言葉" aria-label="合言葉">
+      <button type="submit">入る</button>
+    </form>
+    <p id="gate-error" class="gate-error" hidden>合言葉がちがうみたい。もう一度どうぞ。</p>
+  </div>
+</div>
+
+<!-- ============ EXPIRED ============ -->
+<div id="expired" class="expired" hidden>
+  <div class="expired-card">
+    <p class="exp-mark">🌿</p>
+    <h1>THE THREAD 2日間チャレンジ<br>参加者ページの公開期間は終了しました</h1>
+    <p class="exp-lead">いつでも、自分に戻れる糸は<br>あなたの中にあります。</p>
+    <p class="exp-sub">次回のTHE THREAD関連情報は<br>メルマガ・Instagramでお知らせします。</p>
+    <a class="btn-line" href="https://iobbio.myflodesk.com/organiclove" target="_blank" rel="noopener">メルマガを受け取る</a>
+  </div>
+</div>
+
+<!-- ============ MAIN ============ -->
+<main id="main" hidden>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <p class="brand">THE&nbsp;THREAD</p>
+    <h1 class="page-title">2日間チャレンジ・参加者の部屋</h1>
+    <p class="page-sub">あなたが戻ってこられる、静かな場所🌿</p>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="hero-eyebrow">THE&nbsp;THREAD ── 2DAYS&nbsp;CHALLENGE</p>
+      <h2 class="hero-h">
+        迷いの正体を知り<br>
+        自分に戻る2日間。
+      </h2>
+      <p class="hero-lead">
+        動けないのは、弱いからじゃない。<br>
+        自分と、少しズレているだけ。
+      </p>
+    </div>
+  </section>
+
+  <!-- WELCOME -->
+  <section class="welcome">
+    <div class="wrap">
+      <p class="welcome-hello">ようこそ、<br>2日間チャレンジへ。</p>
+      <p class="welcome-body">
+        この2日間では、<br>
+        悩み → 理想 → 現状 → ズレ → 本音 → 未来<br>
+        という流れを、「物語構造」に沿って体験していきます。
+      </p>
+      <p class="welcome-thanks">
+        8人で集まれたこと、ほんとうにうれしかったです。<br>
+        どうもありがとう。<br>
+        ここは、何度でも戻ってこられる場所です。
+      </p>
+      <p class="welcome-note">アクセスは2026年6月15日まで。<br>何度でも、戻ってきてください。</p>
+      <p class="welcome-sign">レムケなつこ ＋ コーチはったー</p>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section class="steps">
+    <div class="wrap">
+      <p class="section-eyebrow">物語構造</p>
+      <h3 class="section-h">6つのステップ</h3>
+      <ol class="step-list" id="step-list">
+        <li class="step done"><span class="num">01</span><span class="label">悩み</span><span class="day">Day1</span></li>
+        <li class="step done"><span class="num">02</span><span class="label">理想</span><span class="day">Day1</span></li>
+        <li class="step now"><span class="num">03</span><span class="label">現状</span><span class="day">Day2</span></li>
+        <li class="step"><span class="num">04</span><span class="label">ズレ</span><span class="day">Day2</span></li>
+        <li class="step"><span class="num">05</span><span class="label">本音</span><span class="day">Day2</span></li>
+        <li class="step"><span class="num">06</span><span class="label">未来</span><span class="day">Day2</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- VIDEOS -->
+  <section class="videos">
+    <div class="wrap">
+      <p class="section-eyebrow">Archive</p>
+      <h3 class="section-h">アーカイブ動画</h3>
+
+      <div class="video-block">
+        <p class="video-label">Day1 ── 2026.05.12</p>
+        <div class="video-frame" id="video-day1">
+          <div class="video-placeholder">Day1動画は<br>配信後にここに表示されます</div>
+        </div>
+        <p class="video-note">何度でも見返してください。</p>
+      </div>
+
+      <div class="video-block">
+        <p class="video-label">Day2 ── 2026.05.13</p>
+        <div class="video-frame" id="video-day2">
+          <div class="video-placeholder">Day2動画は<br>5/13終了後にここに表示されます</div>
+        </div>
+        <p class="video-note">何度でも見返してください。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO -->
+  <section class="photo">
+    <div class="wrap">
+      <div class="photo-frame">
+        <img src="https://drive.google.com/uc?export=view&id=1iTFRc4Nh_ECcCdbEVisqJXP_il2gDxg8"
+             alt="Day1 集合写真"
+             loading="lazy"
+             referrerpolicy="no-referrer">
+      </div>
+      <p class="photo-caption">Day1 ── 集まってくれたみんなと🌿</p>
+    </div>
+  </section>
+
+  <!-- MATERIALS -->
+  <section class="materials">
+    <div class="wrap">
+      <p class="section-eyebrow">Materials</p>
+      <h3 class="section-h">資料ダウンロード</h3>
+
+      <a class="mat-card" href="https://drive.google.com/file/d/1W2m649D-LPRQooOBuv8yTq3a6UQh73Tu/view" target="_blank" rel="noopener">
+        <p class="mat-name">Day1 資料</p>
+        <p class="mat-desc">Day1で扱った、悩みの可視化と理想の可視化のワークシート。</p>
+        <p class="mat-cta">PDFを開く →</p>
+      </a>
+
+      <div class="mat-card mat-card-soon">
+        <p class="mat-name">Day2 資料</p>
+        <p class="mat-desc">Day2終了後にこちらに追加されます。</p>
+        <p class="mat-cta-soon">公開準備中</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="story">
+    <div class="wrap">
+      <p class="section-eyebrow">Story</p>
+      <h3 class="section-h">2日間で、何をしているのか</h3>
+      <p class="story-intro">押し付けず、振り返れるように。<br>各ステップで、何を見つめたかをまとめました。</p>
+
+      <p class="story-day">Day1 で 触れたこと</p>
+
+      <details class="acc" open>
+        <summary><span class="num">01</span><span>悩み</span></summary>
+        <div class="acc-body">
+          <p>今、心の真ん中にある「もやもや」を、外に出して、形にした。</p>
+          <p>言葉にならない違和感を、ひとつずつ、書き出した時間。</p>
+        </div>
+      </details>
+
+      <details class="acc">
+        <summary><span class="num">02</span><span>理想</span></summary>
+        <div class="acc-body">
+          <p>「本当は、どう在りたいか」を、思い出してみた。</p>
+          <p>日常の中で、置き去りにしてきた願いを、もう一度ひろい上げた時間。</p>
+        </div>
+      </details>
+
+      <p class="story-day">Day2 で 触れること</p>
+
+      <details class="acc">
+        <summary><span class="num">03</span><span>現状</span></summary>
+        <div class="acc-body">
+          <p>今、自分が立っている場所を、優しく見つめる。</p>
+        </div>
+      </details>
+
+      <details class="acc">
+        <summary><span class="num">04</span><span>ズレ</span></summary>
+        <div class="acc-body">
+          <p>理想と現状の間にある「ズレ」を、ジャッジせずに見にいく。</p>
+        </div>
+      </details>
+
+      <details class="acc">
+        <summary><span class="num">05</span><span>本音</span></summary>
+        <div class="acc-body">
+          <p>そのズレの奥にある、まだ言葉になっていない「本音」に触れる。</p>
+        </div>
+      </details>
+
+      <details class="acc">
+        <summary><span class="num">06</span><span>未来</span></summary>
+        <div class="acc-body">
+          <p>その本音から、もう一度 自分の未来を、組み立て直す。</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- AI COACH -->
+  <section class="coach">
+    <div class="wrap">
+      <p class="section-eyebrow">AI Coach</p>
+      <h3 class="section-h">THE THREAD AIコーチを使ってみる</h3>
+      <p class="coach-lead">
+        「自分に話を聞いてもらう」を、毎日の習慣に。<br>
+        私が自分のために作った、THE THREAD流のAIコーチです。
+      </p>
+      <p class="coach-body">
+        2日間で触れた問いを、一日の終わりにもう一度、<br>
+        自分の言葉でほどいていく時間に使ってみてください。
+      </p>
+
+      <div class="coach-cta">
+        <a class="btn-line" href="https://thread-ai-coach.example.com" target="_blank" rel="noopener" data-placeholder="ai-coach-3day">3日体験版を試す</a>
+        <a class="btn-fill" href="https://thread-ai-coach-90.example.com" target="_blank" rel="noopener" data-placeholder="ai-coach-90">90日継続版を見る</a>
+      </div>
+      <p class="coach-note">BANDメンバー限定で、3日体験権をお渡ししています。</p>
+    </div>
+  </section>
+
+  <!-- SEMINAR -->
+  <section class="seminar">
+    <div class="wrap">
+      <p class="section-eyebrow">月末セミナー</p>
+      <h3 class="section-h">自分らしく自由に生きるための、はじめの糸</h3>
+      <p class="sem-date">2026年5月29日(金) or 30日(土)<br>20:00 - 21:30 JST 開催予定</p>
+      <p class="sem-body">
+        進行：レムケなつこ ＋ コーチはったー<br>
+        BANDメンバー先行招待でお届けします。
+      </p>
+      <p class="sem-note">詳細はBANDで近日中に投稿します。</p>
+    </div>
+  </section>
+
+  <!-- BAND -->
+  <section class="band">
+    <div class="wrap">
+      <p class="section-eyebrow">BAND</p>
+      <h3 class="section-h">日々のやり取りはBANDで</h3>
+      <p class="band-lead">気づき・問い・揺れ。<br>言葉にならないままでも、置いていける場所です。</p>
+
+      <div class="band-cta">
+        <a class="btn-fill" href="https://www.band.us/band/102433374" target="_blank" rel="noopener">BANDコミュニティへ</a>
+        <a class="btn-line" href="https://band.us/n/aba5b15034Qbb" target="_blank" rel="noopener">未参加の方はこちらから</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p class="foot-sign">レムケなつこ ＋ コーチはったー</p>
+    <p class="foot-deadline">アクセスは2026年6月15日まで</p>
+    <p class="foot-copy">© Institut für Organic Business GmbH</p>
+    <button id="logout" class="logout" type="button">ログアウト</button>
+  </footer>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
