@@ -21,53 +21,23 @@
     return;
   }
 
-  // ===== ログイン =====
-  function unlock(){
+  function safeGet(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+
+  // ===== 自動ログイン =====
+  if(safeGet(STORAGE_KEY) === 'ok'){
     gate.hidden = true;
     main.hidden = false;
     injectVideos();
     bindLogout();
-  }
-
-  function safeGet(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
-  function safeSet(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
-
-  if(safeGet(STORAGE_KEY) === 'ok'){
-    unlock();
   } else {
     gate.hidden = false;
-    var form  = document.getElementById('gate-form');
     var input = document.getElementById('gate-input');
-    var error = document.getElementById('gate-error');
-
-    function normalize(s){
-      return (s || '')
-        .replace(/[０-９Ａ-Ｚａ-ｚ]/g, function(ch){
-          return String.fromCharCode(ch.charCodeAt(0) - 0xFEE0);
-        })
-        .toUpperCase()
-        .replace(/[^A-Z0-9]/g, '');
-    }
-    var debug = document.getElementById('gate-debug');
-    function tryUnlock(){
-      var raw = input.value || '';
-      var v = normalize(raw);
-      if(debug){
-        debug.hidden = false;
-        debug.textContent = '[debug] raw長さ:' + raw.length + ' / 正規化:"' + v + '" (長さ:' + v.length + ')';
-      }
-      if(v === PASSWORD){
-        safeSet(STORAGE_KEY, 'ok');
-        unlock();
-      } else {
-        error.hidden = false;
-      }
-    }
-    window.__tryUnlock = tryUnlock;
-    form.querySelector('button').addEventListener('click', function(e){ e.preventDefault(); tryUnlock(); });
-    input.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); tryUnlock(); } });
-
     setTimeout(function(){ input && input.focus(); }, 100);
+    // 入室後コールバック(HTML側doGateUnlockから呼ばれる)
+    window.__afterUnlock = function(){
+      injectVideos();
+      bindLogout();
+    };
   }
 
   // ===== 動画埋め込み =====

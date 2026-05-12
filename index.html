@@ -16,11 +16,30 @@
     <h1 class="gate-title">2日間チャレンジ<br>参加者の部屋</h1>
     <p class="gate-sub">合言葉を入れて、扉を開けてください🌿</p>
     <div id="gate-form" autocomplete="off">
-      <input id="gate-input" type="text" inputmode="latin" autocapitalize="characters" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="合言葉" aria-label="合言葉">
-      <button type="button" onclick="window.__tryUnlock&&window.__tryUnlock()">入る</button>
+      <input id="gate-input" type="text" inputmode="latin" autocapitalize="characters" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="合言葉" aria-label="合言葉" onkeydown="if(event.key==='Enter'){event.preventDefault();doGateUnlock();}">
+      <button type="button" onclick="doGateUnlock()">入る</button>
     </div>
     <p id="gate-error" class="gate-error" hidden>合言葉がちがうみたい。もう一度どうぞ。</p>
     <p id="gate-debug" class="gate-error" style="color:#888;font-size:11px" hidden></p>
+    <script>
+      // インライン:ゲート入室処理(外部JS依存なし)
+      function doGateUnlock(){
+        var input = document.getElementById('gate-input');
+        var raw = input.value || '';
+        var v = raw.replace(/[０-９Ａ-Ｚａ-ｚ]/g, function(c){ return String.fromCharCode(c.charCodeAt(0) - 0xFEE0); }).toUpperCase().replace(/[^A-Z0-9]/g, '');
+        var dbg = document.getElementById('gate-debug');
+        if(dbg){ dbg.hidden = false; dbg.textContent = '[debug] raw=' + raw.length + ' v="' + v + '"(' + v.length + ')'; }
+        if(v === 'THETHREAD05'){
+          try{ localStorage.setItem('tt2-2day-members-auth','ok'); }catch(e){}
+          document.getElementById('gate').hidden = true;
+          var main = document.getElementById('main');
+          main.hidden = false;
+          if(window.__afterUnlock) window.__afterUnlock();
+        } else {
+          document.getElementById('gate-error').hidden = false;
+        }
+      }
+    </script>
   </div>
 </div>
 
@@ -269,6 +288,6 @@
 
 </main>
 
-<script src="script.js?v=5"></script>
+<script src="script.js?v=6"></script>
 </body>
 </html>
