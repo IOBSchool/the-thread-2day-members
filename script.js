@@ -45,8 +45,8 @@
         .replace(/[０-９Ａ-Ｚａ-ｚ]/g, function(ch){
           return String.fromCharCode(ch.charCodeAt(0) - 0xFEE0);
         })
-        .replace(/\s+/g, '')
-        .toUpperCase();
+        .toUpperCase()
+        .replace(/[^A-Z0-9]/g, '');
     }
     function tryUnlock(){
       var v = normalize(input.value);
