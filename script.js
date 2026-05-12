@@ -4,7 +4,7 @@
   // ===== CONFIG =====
   var PASSWORD   = 'THETHREAD05';
   var STORAGE_KEY= 'tt2-2day-members-auth';
-  var DEADLINE   = new Date('2026-06-15T23:59:00+09:00');
+  var DEADLINE   = new Date('2026-05-30T23:59:00+09:00');
 
   // Day1 / Day2 動画 (確定したら下記URLを差し替え)
   // 例: 'https://www.youtube.com/embed/XXXX' / 'https://player.vimeo.com/video/XXXX'
