@@ -20,15 +20,12 @@
       <button type="button" onclick="doGateUnlock()">入る</button>
     </div>
     <p id="gate-error" class="gate-error" hidden>合言葉がちがうみたい。もう一度どうぞ。</p>
-    <p id="gate-debug" class="gate-error" style="color:#888;font-size:11px" hidden></p>
     <script>
       // インライン:ゲート入室処理(外部JS依存なし)
       function doGateUnlock(){
         var input = document.getElementById('gate-input');
         var raw = input.value || '';
         var v = raw.replace(/[０-９Ａ-Ｚａ-ｚ]/g, function(c){ return String.fromCharCode(c.charCodeAt(0) - 0xFEE0); }).toUpperCase().replace(/[^A-Z0-9]/g, '');
-        var dbg = document.getElementById('gate-debug');
-        if(dbg){ dbg.hidden = false; dbg.textContent = '[debug] raw=' + raw.length + ' v="' + v + '"(' + v.length + ')'; }
         if(v === 'THETHREAD05'){
           try{ localStorage.setItem('tt2-2day-members-auth','ok'); }catch(e){}
           document.getElementById('gate').hidden = true;
