@@ -29,25 +29,32 @@
     bindLogout();
   }
 
-  if(localStorage.getItem(STORAGE_KEY) === 'ok'){
+  function safeGet(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+  function safeSet(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+
+  if(safeGet(STORAGE_KEY) === 'ok'){
     unlock();
   } else {
     gate.hidden = false;
     var form  = document.getElementById('gate-form');
     var input = document.getElementById('gate-input');
     var error = document.getElementById('gate-error');
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
+
+    function tryUnlock(){
       var v = (input.value || '').trim();
       if(v === PASSWORD){
-        localStorage.setItem(STORAGE_KEY, 'ok');
+        safeSet(STORAGE_KEY, 'ok');
         unlock();
       } else {
         error.hidden = false;
         input.value = '';
         input.focus();
       }
-    });
+    }
+    form.addEventListener('submit', function(e){ e.preventDefault(); tryUnlock(); });
+    form.querySelector('button').addEventListener('click', function(e){ e.preventDefault(); tryUnlock(); });
+    input.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); tryUnlock(); } });
+
     setTimeout(function(){ input && input.focus(); }, 100);
   }
 
