@@ -63,7 +63,7 @@
         error.hidden = false;
       }
     }
-    form.addEventListener('submit', function(e){ e.preventDefault(); tryUnlock(); });
+    window.__tryUnlock = tryUnlock;
     form.querySelector('button').addEventListener('click', function(e){ e.preventDefault(); tryUnlock(); });
     input.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); tryUnlock(); } });
 
