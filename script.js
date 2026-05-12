@@ -8,7 +8,7 @@
 
   // Day1 / Day2 動画 (確定したら下記URLを差し替え)
   // 例: 'https://www.youtube.com/embed/XXXX' / 'https://player.vimeo.com/video/XXXX'
-  var DAY1_VIDEO = '';
+  var DAY1_VIDEO = 'https://player.vimeo.com/video/1191665130?h=05b0859d2a';
   var DAY2_VIDEO = '';
 
   var gate    = document.getElementById('gate');
