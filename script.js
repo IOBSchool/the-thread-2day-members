@@ -48,15 +48,19 @@
         .toUpperCase()
         .replace(/[^A-Z0-9]/g, '');
     }
+    var debug = document.getElementById('gate-debug');
     function tryUnlock(){
-      var v = normalize(input.value);
+      var raw = input.value || '';
+      var v = normalize(raw);
+      if(debug){
+        debug.hidden = false;
+        debug.textContent = '[debug] raw長さ:' + raw.length + ' / 正規化:"' + v + '" (長さ:' + v.length + ')';
+      }
       if(v === PASSWORD){
         safeSet(STORAGE_KEY, 'ok');
         unlock();
       } else {
         error.hidden = false;
-        input.value = '';
-        input.focus();
       }
     }
     form.addEventListener('submit', function(e){ e.preventDefault(); tryUnlock(); });
