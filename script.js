@@ -40,8 +40,16 @@
     var input = document.getElementById('gate-input');
     var error = document.getElementById('gate-error');
 
+    function normalize(s){
+      return (s || '')
+        .replace(/[０-９Ａ-Ｚａ-ｚ]/g, function(ch){
+          return String.fromCharCode(ch.charCodeAt(0) - 0xFEE0);
+        })
+        .replace(/\s+/g, '')
+        .toUpperCase();
+    }
     function tryUnlock(){
-      var v = (input.value || '').trim();
+      var v = normalize(input.value);
       if(v === PASSWORD){
         safeSet(STORAGE_KEY, 'ok');
         unlock();
