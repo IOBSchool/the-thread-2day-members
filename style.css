@@ -135,7 +135,6 @@ section{padding:48px 0;border-top:1px solid var(--line)}
 .welcome-thanks{font-size:14.5px;line-height:2.1;text-align:center;margin:0 0 30px}
 .welcome-note{
   font-size:12.5px;text-align:center;color:var(--sub);
-  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
   padding:14px 0;margin:0 0 22px;line-height:1.9;
 }
 .welcome-sign{text-align:center;font-size:13px;color:var(--gold);letter-spacing:.06em;margin:0}
