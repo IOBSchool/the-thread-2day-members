@@ -293,6 +293,54 @@ section{padding:48px 0;border-top:1px solid var(--line)}
   border-top:1px dashed var(--line);padding-top:16px;margin:18px 0 0;
 }
 
+/* TEASE (TT2 LP CTA) */
+.tease{
+  background:
+    radial-gradient(ellipse at 20% 0%,#fff4dc 0%,transparent 55%),
+    radial-gradient(ellipse at 100% 100%,#f0e6d4 0%,transparent 60%),
+    var(--bg-soft);
+  text-align:center;
+  border-top:1px solid var(--line);
+}
+.tease-eyebrow{
+  letter-spacing:.36em;font-size:10.5px;color:var(--gold);
+  font-family:sans-serif;margin:0 0 22px;
+}
+.tease-h{
+  font-size:21px;font-weight:500;line-height:1.95;
+  letter-spacing:.04em;margin:0 0 30px;
+}
+.tease-h em{
+  font-style:normal;color:var(--accent);
+  border-bottom:1px solid var(--accent);padding-bottom:2px;
+}
+.tease-body{
+  font-size:14px;line-height:2.1;color:var(--ink);
+  margin:0 0 22px;
+}
+.tease-quiet{
+  color:var(--sub);font-size:13.5px;
+  margin:8px 0 30px;
+}
+.tease-btn{
+  display:inline-block;
+  padding:16px 36px;
+  background:var(--ink);color:#fff;
+  text-decoration:none;border-radius:3px;
+  font-size:14.5px;letter-spacing:.18em;
+  transition:all .25s;
+  box-shadow:0 4px 14px rgba(120,90,50,.18);
+}
+.tease-btn:active{opacity:.75;transform:translateY(1px)}
+.tease-note{
+  font-size:11.5px;color:var(--sub);
+  margin:20px 0 0;letter-spacing:.04em;
+}
+@media(min-width:640px){
+  .tease-h{font-size:25px}
+  .tease-body{font-size:15px}
+}
+
 /* FOOTER */
 .site-footer{
   padding:40px 22px 60px;text-align:center;
