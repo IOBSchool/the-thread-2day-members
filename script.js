@@ -9,7 +9,7 @@
   // Day1 / Day2 動画 (確定したら下記URLを差し替え)
   // 例: 'https://www.youtube.com/embed/XXXX' / 'https://player.vimeo.com/video/XXXX'
   var DAY1_VIDEO = 'https://player.vimeo.com/video/1191665130?h=05b0859d2a';
-  var DAY2_VIDEO = '';
+  var DAY2_VIDEO = 'https://player.vimeo.com/video/1191928410?h=3b91beaf2e';
 
   var gate    = document.getElementById('gate');
   var expired = document.getElementById('expired');
